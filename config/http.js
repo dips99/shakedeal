@@ -29,16 +29,26 @@ module.exports.http = {
     *                                                                          *
     ***************************************************************************/
 
-    // order: [
+    order: [
+      'http_req',
     //   'cookieParser',
     //   'session',
-    //   'bodyParser',
+      'bodyParser',
     //   'compress',
     //   'poweredBy',
-    //   'router',
-    //   'www',
+      'router',
+      'www',
     //   'favicon',
-    // ],
+    ],
+
+    //custom HTTP middleware function
+    http_req: (function () {
+      console.log('Initializing `http middleware` (HTTP middleware)...');
+      return function (req, res, next) {
+        console.log('Received HTTP request: ' + req.method + ' ' + req.path);
+        return next();
+      };
+    })(),
 
 
     /***************************************************************************
@@ -49,11 +59,11 @@ module.exports.http = {
     *                                                                          *
     ***************************************************************************/
 
-    // bodyParser: (function _configureBodyParser(){
-    //   var skipper = require('skipper');
-    //   var middlewareFn = skipper({ strict: true });
-    //   return middlewareFn;
-    // })(),
+    bodyParser: (function _configureBodyParser(){
+      var skipper = require('skipper');
+      var middlewareFn = skipper({ strict: true });
+      return middlewareFn;
+    })(),
 
   },
 
