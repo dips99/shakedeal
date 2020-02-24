@@ -9,7 +9,7 @@ module.exports = {
     /**
    * categories index
    * @description :: categories index
-   * @api {get} /categories/ categories index
+   * @api {get} /categories/ categories list
    * @apiName categories index
    * @apiGroup Categories
    * @apiExample Example usage:
@@ -27,11 +27,11 @@ module.exports = {
     /**
     * add categories 
     * @description :: add category 
-    * @api {post} /category/ add category 
+    * @api {post} /api/v1/category/ add category 
     * @apiName add category
     * @apiGroup categories
     * @apiExample Example usage:
-    * curl -i localhost:1337/category/
+    * curl -i localhost:1337/api/v1/category/
     * @apiParam {String} categoryname
     * @apiParam {String} categoryurl
     * @apiSuccess {String} status ok.
@@ -42,7 +42,13 @@ module.exports = {
    add: async function(req,res,next) {
     let category = req.body.categoryname;
     let url = req.body.categoryurl;
-    if (!category || category==null || category == undefined || category == "" || category.length == 0 || !url || url==null || url == undefined || url == "" || url.length == 0) {
+
+    function isNullorEmpty(val){
+        if(!val || val == null || val == undefined || val == "" | val.length ==0){
+            return 1;
+        }
+    }
+    if (category.isNullorEmpty() || url.isNullorEmpty()) {
         return res.badRequest();
     }else{
         let createCategoryObj = {
