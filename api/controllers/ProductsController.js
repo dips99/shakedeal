@@ -29,22 +29,22 @@ module.exports = {
     if(is_brand==1){
         var product_details = await Products.find({
           where:{ 
-            brand_id:brand_id,
+            brands:brand_id,
             p_url:website
           }
         })
-        .populate('brands')
-        .populate('categories');
+        .populate('brands');
+        // .populate('categories');
     }else{
         var product_details = await Products.find({
           where:
           {
-            category_id:category_id,
+            categories:category_id,
             p_url:website
           }
         })
-        .populate('brands')
-        .populate('categories');
+        .populate('brands');
+      //  / .populate('categories');
     }
 
     if(product_details){

@@ -18,8 +18,8 @@ module.exports = {
     index: function(req, res, next) {
         Brands.find().exec(function(err, list) {
             if (err) return Error('Error');
-            return res.view({
-                result: list
+            return res.send({
+                data: list
             });
         });
     },
@@ -27,11 +27,11 @@ module.exports = {
     /**
     * add brands 
     * @description :: add brand 
-    * @api {post} /api/v1/brand/ add brand 
+    * @api {post} /brand/ add brand 
     * @apiName add brand 
     * @apiGroup brands
     * @apiExample Example usage:
-    * curl -i localhost:1337/api/v1/brand/
+    * curl -i localhost:1337/brand/
     * @apiParam {String} brandname
     * @apiParam {String} brandurl
     * @apiSuccess {String} status ok.

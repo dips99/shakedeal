@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-
+  tableName: 'products',
   attributes: {
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
@@ -30,8 +30,9 @@ module.exports = {
       columnType: 'text',
       required: true
     },
-    brand_id : {
-      model: "brands",
+    brands : {
+      model: 'brands',
+      columnName: 'brand_id',
       required: true
     },
     img_url: {
@@ -64,8 +65,9 @@ module.exports = {
       columnType: 'float',
       allowNull: true
     },
-    category_id:{
+    categories:{
       model : 'categories',
+      columnName: 'category_id',
       required: true
     },
     created_on: {

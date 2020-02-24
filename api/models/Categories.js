@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-
+  tableName: 'categories',
   attributes: {
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗

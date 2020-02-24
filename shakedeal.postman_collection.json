@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "ed43e8e8-d6ef-4f40-8e54-76e61673692e",
+		"name": "shakedeal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:1337/fetchProduct/?website=sdfs&is_brand=1&brand_id=1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:1337/fetchProduct/?website=sdfs&is_brand=1&brand_id=1",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"fetchProduct",
+						""
+					],
+					"query": [
+						{
+							"key": "website",
+							"value": "sdfs"
+						},
+						{
+							"key": "is_brand",
+							"value": "1"
+						},
+						{
+							"key": "brand_id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "product details fetch as per website and selection of brands or category"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:1337/brands/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:1337/categories/",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"categories",
+						""
+					]
+				},
+				"description": "list of all brands"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:1337/categories/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:1337/categories/",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"categories",
+						""
+					]
+				},
+				"description": "list of all categories"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:1337/category/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "categoryname",
+							"value": "test_cat",
+							"type": "text"
+						},
+						{
+							"key": "categoryurl",
+							"value": "test_cat_url",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:1337/category/",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"category",
+						""
+					]
+				},
+				"description": "add category"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:1337/brand/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "brandname",
+							"value": "test_brand",
+							"type": "text"
+						},
+						{
+							"key": "brandurl",
+							"value": "test_brand_url",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:1337/brand/",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"brand",
+						""
+					]
+				},
+				"description": "add brand"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

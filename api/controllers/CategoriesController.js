@@ -18,8 +18,8 @@ module.exports = {
     index: function(req, res, next) {
         Categories.find().exec(function(err, list) {
             if (err) return Error('Error');
-            return res.view({
-              result: list
+            return res.send({
+                data: list
             });
         });
     },
@@ -27,11 +27,11 @@ module.exports = {
     /**
     * add categories 
     * @description :: add category 
-    * @api {post} /api/v1/category/ add category 
+    * @api {post} /category/ add category 
     * @apiName add category
     * @apiGroup categories
     * @apiExample Example usage:
-    * curl -i localhost:1337/api/v1/category/
+    * curl -i localhost:1337/category/
     * @apiParam {String} categoryname
     * @apiParam {String} categoryurl
     * @apiSuccess {String} status ok.
